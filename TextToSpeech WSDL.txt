@@ -1,0 +1,55 @@
+  <?xml version="1.0" encoding="UTF-8" ?> 
+  <definitions name="TTSService" targetNamespace="http://testvger.objectspace.com/TTSService" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://testvger.objectspace.com/TTSService" xmlns:xsd="http://www.w3.org/1999/XMLSchema">
+  <message name="IngetBase64WaveRequest">
+  <part name="text" type="xsd:string" /> 
+  <part name="speed" type="xsd:float" /> 
+  <part name="pitch" type="xsd:float" /> 
+  <part name="volume" type="xsd:float" /> 
+  </message>
+  <message name="OutgetBase64WaveResponse">
+  <part name="Base64WaveString" type="xsd:string" /> 
+  </message>
+  <message name="IngetBase64WaveRequest2">
+  <part name="text" type="xsd:string" /> 
+  </message>
+  <message name="OutgetBase64WaveResponse2">
+  <part name="Base64WaveString" type="xsd:string" /> 
+  </message>
+  <portType name="TTSService">
+  <operation name="getBase64Wave">
+  <input message="IngetBase64WaveRequest" /> 
+  <output message="OutgetBase64WaveResponse" /> 
+  </operation>
+  <operation name="getBase64Wave">
+  <input message="IngetBase64WaveRequest2" /> 
+  <output message="OutgetBase64WaveResponse2" /> 
+  </operation>
+  </portType>
+  <binding name="TTSServiceBinding" type="TTSService">
+  <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http" /> 
+  <operation name="getBase64Wave">
+  <soap:operation soapAction="urn:TTSService" /> 
+  <input>
+  <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:TTSService" use="encoded" /> 
+  </input>
+  <output>
+  <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:TTSService" use="encoded" /> 
+  </output>
+  </operation>
+  <operation name="getBase64Wave">
+  <soap:operation soapAction="urn:TTSService" /> 
+  <input>
+  <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:TTSService" use="encoded" /> 
+  </input>
+  <output>
+  <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:TTSService" use="encoded" /> 
+  </output>
+  </operation>
+  </binding>
+  <service name="TTSService">
+  <documentation>A Text-To-Speech Web Service</documentation> 
+  <port binding="TTSServiceBinding" name="TTSServicePort">
+  <soap:address location="http://testvger.objectspace.com/soap/servlet/rpcrouter" /> 
+  </port>
+  </service>
+  </definitions>
