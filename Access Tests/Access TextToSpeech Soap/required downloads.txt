@@ -1,0 +1,75 @@
+ Soap Web Services called Talking Clock, Text to Speech (returns .wav
+file so MS XVoice.dll not required) make your error messages verbal,
+Airline Plane location while plane in the air, Text language translation
+English to Spanish etc., California Highway conditions,
+Worldwide SMS phone messages (SMS requires free registration)
+
+ The code in here is not pretty and is just meant to get you
+up and running against Soap Web Services. The problem I had was in not 
+being able to tell whether the services I was running against was 
+either available or configured correctly in the Soap Server. At least 
+some of these should work. You may have to change some file paths 
+and references (ie. delete MS xvoice.dll if you haven't installed)
+Have fun and I hope this is enough to give you some ideas. I haven't
+seen any code to do this on planet source so it is just a first shot.
+To try sample service examples at least 50 go to 
+http://www.xmethods.net
+There is a uddi interface at this site here so you could get your 
+program to search the uddi site and execute the service after doing
+a discovery on the t-model and wsdl.
+
+ You will have to read some of soap articles listed below to gain
+a fuller understanding of Soap or it's cousin XML-RPC.
+You will need PocketSoap Toolkit to run this code.
+
+ This code has a lot of dead code mostly left in to show some of 
+the dead ends I tried. I don't use WSDL but you could code in with
+MS Soap toolkit ver 2.0 beta 2. I just look up the SoapAction URI's
+in the WSDL file and code in proxy and parameters. For more info go
+to the Soap Web Service Sites listed below. The talking clock shows
+how to use base64 coding in XML.
+
+ Some of the Soap Servers go up and down at odd intervals, so you
+might retry at a later time or date.
+
+ I used simon Fell's PocketSoap as it works on Win CE or Palms as 
+well as Win95 since MS Soap Toolkit utilitzes some OS calls only 
+available in Win98 and higher. There are other toolkits available 
+such as SoapLite. The toolkits reduce the amount of code required
+to parse the Soap Envelope and XML serializers. It also points
+and sends the Soap XML envelope to the proper URL endpoint.
+
+Downloads necessary
+ Simon Fell's Pocket Soap
+
+http://www.pocketsoap.com/pocketsoap
+
+ or use Microsoft Soap toolkit must be Win98 or above
+    and requires code rewrite
+----
+following download maybe required to do your own speech to text
+   processing rather than using a soap call
+
+http://msdn.microsoft.com/msagent/agentdl.asp
+ 1 Download the Microsoft SAPI 4.0a runtime binaries (824 KB exe) 
+ 2 Download Text-to-speech engines
+ 3 Download the Microsoft Agent core components (395 KB exe) 
+-------
+Soap Service sites
+http://www.xmethods.net
+http://www.salcentral.com
+http://www.webserviceswatch.com
+http://www.lucin.com
+--------
+Soap VB articles
+http://www.perfectxml.com/articles/xml/vbsoap.asp
+http://www.develop.com/soap/soapfaq.htm
+http://www.xmlrpc.com/
+http://msdn.microsoft.com/msdnmag/issues/0300/soap/soap.asp
+http://www.soapclient.com/
+http://www.vbxml.com/soapworkshop/
+http://www.xmlmag.com
+
+ Marty Connelly 
+ Victoria, BC, Canada
+ martyconnelly@home.com
